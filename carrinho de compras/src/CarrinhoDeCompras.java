@@ -23,7 +23,7 @@ public class CarrinhoDeCompras {
     public double calcularValorTotal(){
         double result = 0;
         for (Item item: itens) {
-            result += item.getPreco();
+            result += item.getPreco() * item.getQtd();
         }
         return result;
     }

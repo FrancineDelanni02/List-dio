@@ -17,6 +17,10 @@ public class Item {
         return preco;
     }
 
+    public int getQtd(){
+        return qtd;
+    }
+
     public String toString(){
         return "Nome: "+ nome + " - Preço: "+preco+" - Quantidade: "+qtd;
     }
