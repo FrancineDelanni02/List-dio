@@ -1,4 +1,4 @@
-public class Pessoa{
+public class Pessoa implements Comparable<Pessoa>{
     private String nome;
     private int idade;
     private double altura;
@@ -24,5 +24,10 @@ public class Pessoa{
     @Override
     public String toString(){
         return "Nome: "+nome+" Idade: "+idade+" Altura: "+altura;
+    }
+
+    @Override
+    public int compareTo(Pessoa p) {
+        return Integer.compare(idade,p.getIdade());
     }
 }
