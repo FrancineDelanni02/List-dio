@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -14,10 +15,15 @@ public class ListaPessoas {
     }
 
     public void ordenarPessoasPorIdade(){
-        Comparable c = () -> compareTo(pessoas);
+        Collections.sort(pessoas);
     }
 
     public void ordenarPessoasPorAltura(){
-        Comparator<Pessoa> c = (a1,a2) -> Double.compare(a1.getAltura(),a2.getAltura());
+        Comparator<Pessoa> c = Comparator.comparingDouble(Pessoa::getAltura);
+        Collections.sort(pessoas,c); //comparator passa dois parâmetros
+    }
+
+    public void exibirPessoas(){
+        pessoas.forEach(System.out::println);
     }
 }
